@@ -5,11 +5,19 @@ const { getStore } = require("@netlify/blobs");
 // POST   /.netlify/functions/leaderboard  { key, value } -> { ok: true }
 // DELETE /.netlify/functions/leaderboard?key=XYZ      -> { ok: true }
 
+function getBlobStore(){
+  return getStore({
+    name: "bookends-leaderboard",
+    siteID: process.env.NETLIFY_SITE_ID,
+    token: process.env.NETLIFY_BLOBS_TOKEN,
+  });
+}
+
 exports.handler = async (event) => {
   const headers = { "Content-Type": "application/json" };
 
   try {
-    const store = getStore("bookends-leaderboard");
+    const store = getBlobStore();
 
     if (event.httpMethod === "GET") {
       const key = event.queryStringParameters && event.queryStringParameters.key;
