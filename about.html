@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>About · Bookends</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap');
+
+  :root{
+    color-scheme: dark;
+    --bg:#241934;
+    --card:#352a52;
+    --cream:#FFF6E9;
+    --coral:#FF6B5B;
+    --mint:#2EC4B6;
+    --sunny:#FFC145;
+    --text-dim:#b4a8cf;
+    --text:#FFF6E9;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#241934;}
+  body{
+    color:var(--text);
+    font-family:'Nunito',sans-serif;
+    line-height:1.65;
+    font-size:16px;
+    padding:32px 16px 80px;
+    display:flex;
+    justify-content:center;
+  }
+  .wrap{width:100%;max-width:640px;}
+
+  a.back{
+    color:var(--text-dim);
+    font-size:13px;
+    text-decoration:none;
+    display:inline-block;
+    margin-bottom:16px;
+  }
+  a.back:hover{color:var(--sunny);}
+
+  h1{
+    font-family:'Baloo 2',cursive;
+    font-weight:800;
+    font-size:32px;
+    margin:0 0 6px;
+    color:var(--sunny);
+  }
+  .tagline{
+    font-family:'Nunito',sans-serif;
+    font-size:15px;
+    color:var(--text-dim);
+    margin-bottom:28px;
+  }
+
+  .badge{
+    display:inline-block;
+    background:var(--coral);
+    color:var(--bg);
+    font-family:'Space Mono',monospace;
+    font-weight:700;
+    font-size:11px;
+    letter-spacing:0.1em;
+    padding:3px 10px;
+    border-radius:999px;
+    margin-bottom:16px;
+  }
+
+  h2{
+    font-family:'Baloo 2',cursive;
+    font-weight:700;
+    font-size:20px;
+    color:var(--cream);
+    margin:32px 0 12px;
+  }
+
+  p{margin:0 0 14px; color:var(--text-dim);}
+  strong{color:var(--text);}
+  ul{color:var(--text-dim); padding-left:22px;}
+  li{margin-bottom:8px;}
+
+  .feedback-box{
+    background:var(--card);
+    border-left:4px solid var(--mint);
+    border-radius:10px;
+    padding:20px 22px;
+    margin:28px 0;
+  }
+  .feedback-box h2{margin-top:0; color:var(--mint);}
+  .feedback-box a.email{
+    display:inline-block;
+    margin-top:8px;
+    background:var(--sunny);
+    color:var(--bg);
+    font-family:'Nunito',sans-serif;
+    font-weight:800;
+    font-size:14px;
+    padding:10px 18px;
+    border-radius:10px;
+    text-decoration:none;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/">← Back to Bookends</a>
+  <span class="badge">BETA</span>
+  <h1>A quick note about Bookends</h1>
+  <p class="tagline">This is a hobby project, made by one person, still being actively worked on.</p>
+
+  <p>That means it's genuinely still a <strong>work in progress</strong>. We're actively reviewing, expanding and correcting the answer lists behind each bonus category to make sure they're as accurate and fair as possible – but with tens of thousands of words across dozens of categories, some gaps, oddities or the occasional wrong answer are still likely.</p>
+
+  <h2>What we're working on</h2>
+  <ul>
+    <li>Replacing hand-typed lists with properly sourced, verified data where we can</li>
+    <li>Trimming categories that lean too obscure, so answers feel findable rather than trivia-only</li>
+    <li>Fixing genuine bugs as they're spotted</li>
+    <li>Adding new categories people suggest</li>
+  </ul>
+
+  <div class="feedback-box">
+    <h2>Found something? Tell us.</h2>
+    <p>If a word didn't work that should have, an answer feels wrong, something broke or you've got an idea for a new category – we'd genuinely like to hear it. This game will get better as people tell us what's not quite right yet.</p>
+    <a class="email" href="mailto:bookendsgame@gmail.com">Email bookendsgame@gmail.com</a>
+  </div>
+
+  <p>Thanks for playing and for bearing with the rough edges while we sand them down.</p>
+</div>
+</body>
+</html>
