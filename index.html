@@ -14,13 +14,13 @@
 <link rel="canonical" href="https://bookendsdaily.com/">
 <meta name="description" content="Bookends is a free daily word game where every word starts with today’s first letter and ends with today’s last letter. Find the longest and shortest words you can, tackle three bonus categories and compete for today’s highest score.">
 <meta property="og:title" content="Bookends – The Daily Word Game">
-<meta property="og:description" content="You’ve got the ends. Now fill the gaps. Play today’s free daily word game.">
+<meta property="og:description" content="You’ve got the ends. Now make some words. Play today’s free daily word game.">
 <meta property="og:image" content="https://bookendsdaily.com/og-image.png">
 <meta property="og:url" content="https://bookendsdaily.com/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Bookends – The Daily Word Game">
-<meta name="twitter:description" content="You’ve got the ends. Now fill the gaps. Play today’s free daily word game.">
+<meta name="twitter:description" content="You’ve got the ends. Now make some words. Play today’s free daily word game.">
 <meta name="twitter:image" content="https://bookendsdaily.com/og-image.png">
 <title>Bookends – The Daily Word Game</title>
 <style>
@@ -207,6 +207,32 @@
   }
   .countdown b{color:var(--mint); font-weight:700;}
 
+  .howto-panel{
+    background:var(--card);
+    border-radius:14px;
+    padding:16px 18px;
+    margin-bottom:16px;
+  }
+  .howto-title{
+    font-family:'Montserrat',sans-serif;
+    font-weight:700;
+    font-size:18px;
+    color:var(--sunny);
+    margin:0 0 10px;
+  }
+  .howto-hide{
+    display:block;
+    margin:14px auto 0;
+    background:none;
+    border:none;
+    font-family:'Montserrat',sans-serif;
+    font-weight:700;
+    font-size:12px;
+    color:var(--sunny);
+    cursor:pointer;
+    padding:4px 8px;
+  }
+  .howto-hide:hover{opacity:0.8;}
   .howto-intro{
     color:var(--text-dim);
     font-size:12px;
@@ -294,7 +320,7 @@
   .howto-body p{margin:0 0 8px;}
   .howto-body strong{color:var(--text);}
   .howto-body ul{margin:0; padding-left:18px;}
-  .howto-body li{margin-bottom:14px; line-height:1.6;}
+  .howto-body li{margin-bottom:22px; line-height:1.6;}
 
   .mode-banner{
     text-align:center;
@@ -873,20 +899,24 @@
     <div class="title-row">
       <h1 id="titleWord"></h1>
     </div>
-    <p class="tagline">You’ve got the ends. Now fill the gaps.</p>
+    <p class="tagline">You’ve got the ends. Now make some words.</p>
   </header>
 
   <div class="howto-panel" id="howtoPanel" style="display:none;">
+    <h3 class="howto-title">How to play</h3>
     <p class="howto-intro">Bookends is a free daily word game where every word starts with today’s first letter and ends with today’s last letter. Find the longest and shortest words you can, tackle three bonus categories and compete for today’s highest score.</p>
-    <ul>
-      <li><strong>Longest word</strong>: the longer the word the more points you get.</li>
-      <li><strong>Shortest word</strong>: the shorter the word the more points you get.</li>
-      <li><strong>3 bonus categories</strong> (random each day): try all three if you like – 1 point per letter, but only your <strong>best</strong> one counts toward your score.</li>
-      <li><strong>Two words allowed</strong> for bonus categories – e.g. "Polar bear" or "Acid green" both count, as long as the whole phrase starts and ends with the right letters.</li>
-      <li><strong>Found an answer?</strong> Keep trying for a better one if you want – we’ll tell you if a stronger answer exists, without giving it away. Hit "Lock in" when you’re happy, and that’s when you’ll see what else was possible.</li>
-      <li><strong>Stuck?</strong> Hit "Give up" on any category to see example answers. This locks it in at 0 points.</li>
-      <li><strong>Total score</strong> is the sum of everything you’ve locked in – anything you’ve found but not yet locked gets automatically locked in when you save your score.</li>
-    </ul>
+    <div class="howto-body">
+      <ul>
+        <li><strong>Longest word</strong>: the longer the word the more points you get.</li>
+        <li><strong>Shortest word</strong>: the shorter the word the more points you get.</li>
+        <li><strong>3 bonus categories</strong> (random each day): try all three if you like – 1 point per letter, but only your <strong>best</strong> one counts toward your score.</li>
+        <li><strong>Two words allowed</strong> for bonus categories – e.g. "Polar bear" or "Acid green" both count, as long as the whole phrase starts and ends with the right letters.</li>
+        <li><strong>Found an answer?</strong> Keep trying for a better one if you want – we’ll tell you if a stronger answer exists, without giving it away. Hit "Lock in" when you’re happy, and that’s when you’ll see what else was possible.</li>
+        <li><strong>Stuck?</strong> Hit "Give up" on any category to see example answers. This locks it in at 0 points.</li>
+        <li><strong>Total score</strong> is the sum of everything you’ve locked in – anything you’ve found but not yet locked gets automatically locked in when you save your score.</li>
+      </ul>
+    </div>
+    <button class="howto-hide" id="howtoHide">Hide</button>
   </div>
 
   <div class="mode-banner" id="modeBanner">
@@ -2255,6 +2285,10 @@ document.getElementById("gameShareBtn").addEventListener("click", shareGameInvit
 document.getElementById("howtoToggle").addEventListener("click", () => {
   const panel = document.getElementById("howtoPanel");
   panel.style.display = panel.style.display === "none" ? "block" : "none";
+});
+
+document.getElementById("howtoHide").addEventListener("click", () => {
+  document.getElementById("howtoPanel").style.display = "none";
 });
 
 document.getElementById("saveScoreBtn").addEventListener("click", saveScore);
